@@ -1,24 +1,23 @@
-fastapi
+fastapi==0.111.1
 uvicorn[standard]==0.30.6
-sqlalchemy
-pydantic
-pydantic-settings
-python-dotenv
+sqlalchemy==2.0.31
+pydantic==2.8.2
+pydantic-settings==2.3.4
+python-dotenv==1.0.1
 
-langchain
-langchain-community
-langchain-text-splitters
-langchain-google-genai
-langchain-pinecone
-langchain_huggingface
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-text-splitters==0.2.4
+langchain-google-genai==1.0.8
+langchain-pinecone==0.1.2
+langchain-huggingface==0.0.8
 
-pinecone-client
-sentence-transformers
-torch
+pinecone-client==3.2.2
+sentence-transformers==2.6.1
+torch==2.3.1
 
-google-generativeai
-huggingface-hub
+google-generativeai==0.7.2
+huggingface-hub==0.24.2
 
-pypdf
-python-multipart
-
+pypdf==4.3.1
+python-multipart==0.0.9
