@@ -1,0 +1,17 @@
+# ignore node modules, .venv and other environment files
+node_modules/
+.venv/
+.env
+
+
+# recursively ignore __pycache__ directories and .pyc files
+__pycache__/
+*.pyc
+# ignore logs and temporary files
+logs/
+*.log
+temp/
+# ignore database files
+*.db
+# ignore IDE and editor specific files
+.vscode/
