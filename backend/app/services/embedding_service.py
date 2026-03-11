@@ -1,21 +1,13 @@
 from functools import lru_cache
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
-from app.config import get_settings
-
-settings = get_settings()
+# Using the updated, modern import so it doesn't throw warnings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 @lru_cache()
 def get_embedding_function():
     """
-    Returns a cached HuggingFace API Embeddings instance.
-    This runs via the cloud API so it uses ZERO local RAM!
+    Runs the embedding model locally on the CPU.
+    Since we installed the CPU-only version of PyTorch, this will only use ~90MB of RAM!
     """
-    if not settings.huggingface_api_key:
-        raise ValueError("HUGGINGFACE_API_KEY is missing in your environment variables!")
-        
-    return HuggingFaceInferenceAPIEmbeddings(
-        api_key=settings.huggingface_api_key,
-        model_name=EMBEDDING_MODEL_NAME
-    )
+    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
