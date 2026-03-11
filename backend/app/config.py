@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     backend_port: int = int(os.getenv("PORT", "8000"))
 
     # Database
-    database_url: str
+    database_url: str = os.getenv("DATABASE_URL", "sqlite:///./local_chat.db")
 
     # Pinecone
     pinecone_api_key: str = os.getenv("PINECONE_API_KEY", "")
