@@ -45,7 +45,7 @@ def get_gemini_model() -> ChatGoogleGenerativeAI:
 @lru_cache()
 def get_huggingface_model() -> ChatHuggingFace:
     llm = HuggingFaceEndpoint(
-        repo_id="perplexity-ai/r1-1776",
+        repo_id="meta-llama/Llama-3.1-8B-Instruct",
         task="text-generation",
         max_new_tokens=512,
     )
