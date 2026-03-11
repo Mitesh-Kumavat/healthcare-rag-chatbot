@@ -1,16 +1,21 @@
 from functools import lru_cache
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from app.config import get_settings
 
-from langchain_community.embeddings import HuggingFaceEmbeddings
-
+settings = get_settings()
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-
 @lru_cache()
-def get_embedding_function() -> HuggingFaceEmbeddings:
+def get_embedding_function():
     """
-    Returns a cached HuggingFaceEmbeddings instance.
-    Uses a small, fast model suitable for free-tier hosting.
+    Returns a cached HuggingFace API Embeddings instance.
+    This runs via the cloud API so it uses ZERO local RAM!
     """
-    return HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
-
+    if not settings.huggingface_api_key:
+        raise ValueError("HUGGINGFACE_API_KEY is missing in your environment variables!")
+        
+    return HuggingFaceInferenceAPIEmbeddings(
+        api_key=settings.huggingface_api_key,
+        model_name=EMBEDDING_MODEL_NAME
+    )
