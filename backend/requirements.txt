@@ -1,23 +1,23 @@
 fastapi
 uvicorn[standard]==0.30.6
 sqlalchemy
-pydantic
-pydantic-settings
-python-dotenv
+pydantic==2.12.5
 
-langchain
-langchain-community
-langchain-text-splitters
-langchain-google-genai
-langchain-pinecone
+pydantic-settings==2.13.1
+
+langchain==1.2.10
+langchain-community==0.4.1
+langchain-text-splitters==1.1.1
+langchain-google-genai==4.2.1
+langchain-pinecone==0.2.13
 langchain_huggingface
 
-pinecone-client
-sentence-transformers
+pinecone
+sentence-transformers==5.2.3
 torch
 
 google-generativeai
-huggingface-hub
+huggingface-hub==1.6.0
 
 pypdf
 python-multipart

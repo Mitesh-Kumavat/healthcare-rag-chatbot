@@ -48,8 +48,6 @@ def get_huggingface_model() -> ChatHuggingFace:
         repo_id="mistralai/Mistral-7B-Instruct-v0.2",
         task="text-generation",
         max_new_tokens=512,
-        huggingfacehub_api_token=settings.huggingface_api_key,
-        kwargs={"temperature": 0.1, "max_new_tokens": 512},
     )
     # Use a small, instruction-tuned free model
     return ChatHuggingFace(
