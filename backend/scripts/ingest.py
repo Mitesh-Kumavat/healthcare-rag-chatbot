@@ -7,8 +7,8 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
-from app.rag.ingest import ingest_documents  # noqa: E402
-from app.config import get_settings, configure_langsmith  # noqa: E402
+from app.rag.ingest import ingest_documents
+from app.config import get_settings, configure_langsmith
 
 
 def main():
