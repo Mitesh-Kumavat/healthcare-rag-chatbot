@@ -20,7 +20,6 @@ def get_vector_store() -> PineconeVectorStore:
     Assumes the index has already been created in Pinecone dashboard.
     """
     embedding = get_embedding_function()
-    # Explicitly pass API key so we don't rely on global env resolution
     return PineconeVectorStore(
         index_name=settings.pinecone_index_name,
         embedding=embedding,

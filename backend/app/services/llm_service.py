@@ -49,7 +49,6 @@ def get_huggingface_model() -> ChatHuggingFace:
         task="text-generation",
         max_new_tokens=512,
     )
-    # Use a small, instruction-tuned free model
     return ChatHuggingFace(
         llm=llm,
     )
